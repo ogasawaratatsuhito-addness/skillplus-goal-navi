@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="スキルプラスで目標達成へ進む全体像と、今の自分に合う次の一歩が分かる現在地ナビです。" />
+    <meta name="theme-color" content="#edf5ff" />
+    <title>スキルプラス｜目標達成ナビ</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%230b2341'/%3E%3Cpath d='M14 39c8-20 28-20 36 0' fill='none' stroke='%233fe0cc' stroke-width='6' stroke-linecap='round'/%3E%3Ccircle cx='32' cy='24' r='8' fill='%23fff'/%3E%3C/svg%3E" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="目標達成ナビの先頭へ">
+        <img class="brand-logo" src="./assets/skillplus-logo-official.svg" alt="スキルプラス" width="240" height="61" />
+      </a>
+      <a class="support-link" href="https://line.me/ti/p/%40900kxiwl" target="_blank" rel="noreferrer">
+        サポートLINEを開く
+      </a>
+    </header>
+
+    <main id="top">
+      <section class="map-section" aria-labelledby="map-title">
+        <div class="section-heading">
+          <div>
+            <h1 id="map-title">目標達成までの全体マップ</h1>
+          </div>
+          <p>今の自分に近いフェーズをタップ。</p>
+        </div>
+
+        <button class="setup-gate" type="button" data-result="setup">
+          <span class="gate-icon" aria-hidden="true">✓</span>
+          <span><strong>利用の準備</strong><small>学習画面と相談先を確認</small></span>
+          <em class="phase-service">SLS・LINE</em>
+        </button>
+
+        <div class="journey" aria-label="目標達成の5段階">
+          <button class="journey-step" type="button" data-result="goal" data-phase="goal">
+            <span class="step-number">1</span>
+            <img class="step-icon phase-art" src="./assets/phase-goal-v1.png" alt="" width="320" height="320" />
+            <strong>目標を決める</strong>
+            <small>価値観→コアバリュー→マスタープラン</small>
+            <em class="phase-service">3つの診断</em>
+          </button>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <button class="journey-step" type="button" data-result="route" data-phase="route">
+            <span class="step-number">2</span>
+            <img class="step-icon phase-art" src="./assets/phase-route-v1.png" alt="" width="320" height="320" />
+            <strong>道筋を決める</strong>
+            <small>コースと最初の行動を選ぶ</small>
+            <em class="phase-service">スキルプラスくん</em>
+          </button>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <button class="journey-step" type="button" data-result="action" data-phase="action">
+            <span class="step-number">3</span>
+            <img class="step-icon phase-art" src="./assets/phase-action-v1.png" alt="" width="320" height="320" />
+            <strong>行動する</strong>
+            <small>完了条件に沿って取り組む</small>
+            <em class="phase-service">SLS</em>
+          </button>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <button class="journey-step" type="button" data-result="review" data-phase="result">
+            <span class="step-number">4</span>
+            <img class="step-icon phase-art" src="./assets/phase-result-v1.png" alt="" width="320" height="320" />
+            <strong>結果を確認する</strong>
+            <small>行動で何が変わったかを見る</small>
+            <em class="phase-service">Addness</em>
+          </button>
+          <span class="journey-arrow" aria-hidden="true">→</span>
+          <button class="journey-step" type="button" data-result="achieved" data-phase="reflect">
+            <span class="step-number">5</span>
+            <img class="step-icon phase-art" src="./assets/phase-reflect-v1.png" alt="" width="320" height="320" />
+            <strong>振り返る</strong>
+            <small>ゴールを作り、分解して進める</small>
+            <em class="phase-service">Addness</em>
+          </button>
+        </div>
+
+        <p class="cycle-note">↶ 振り返ったら、目標や道筋を見直して、また一歩。</p>
+        <div class="check-entry">
+          <div><strong>自分がどこか、迷ったら</strong><p>短い質問で、現在地と次にやることを確認できます。</p></div>
+          <button class="primary-button" type="button" data-start-check>現在地と次の一手を確認する →</button>
+        </div>
+        <div class="support-rail">
+          <div class="support-rail-label">
+            <span aria-hidden="true">＋</span>
+            <div>
+              <strong>どの段階でも、止まったらサポート</strong>
+              <small>今いる場所はそのままで大丈夫です</small>
+              <span class="support-services"><i>スキルプラスくん</i><i>講師質問</i><i>サポートLINE</i></span>
+            </div>
+          </div>
+          <button type="button" class="secondary-button" data-result="stuck">止まりを解消する</button>
+        </div>
+      </section>
+
+      <section class="check-section" id="current-check" aria-labelledby="check-title" hidden>
+        <div class="check-card">
+          <div class="check-progress" aria-label="現在地チェックの進捗">
+            <span data-progress-label>質問 1 / 4</span>
+            <div class="progress-track"><span data-progress-bar></span></div>
+          </div>
+          <div data-question-area></div>
+          <button class="text-button" type="button" data-reset-check hidden>最初からやり直す</button>
+        </div>
+      </section>
+
+      <section class="result-section" id="result" aria-live="polite" hidden>
+        <div class="result-card">
+          <div class="result-kicker">今のあなたは、まずここから</div>
+          <div class="current-position" aria-label="現在地">
+            <div class="current-position-head">
+              <span>あなたはここ</span>
+              <strong data-current-context></strong>
+            </div>
+            <div class="mini-journey" aria-hidden="true">
+              <span data-mini-phase="setup"><i>0</i><small>準備</small></span>
+              <b></b>
+              <span data-mini-phase="goal"><i>1</i><small>目標</small></span>
+              <b></b>
+              <span data-mini-phase="route"><i>2</i><small>道筋</small></span>
+              <b></b>
+              <span data-mini-phase="action"><i>3</i><small>行動</small></span>
+              <b></b>
+              <span data-mini-phase="result"><i>4</i><small>結果</small></span>
+              <b></b>
+              <span data-mini-phase="reflect"><i>5</i><small>振り返り</small></span>
+            </div>
+          </div>
+          <div class="result-layout">
+            <div class="result-marker" aria-hidden="true"><span data-result-step></span></div>
+            <div>
+              <h2 data-result-title></h2>
+              <p class="result-summary" data-result-summary></p>
+            </div>
+          </div>
+
+          <div class="result-grid">
+            <article>
+              <p class="result-label">次の1アクション</p>
+              <p data-result-action></p>
+            </article>
+            <article>
+              <p class="result-label">一歩進んだ目印</p>
+              <p data-result-done></p>
+            </article>
+          </div>
+
+          <div class="service-card">
+            <div>
+              <p class="result-label">利用するサービス</p>
+              <h3 data-service-name></h3>
+              <p data-service-note></p>
+            </div>
+            <a class="primary-button result-cta" data-primary-cta target="_blank" rel="noreferrer"></a>
+          </div>
+
+          <div class="diagnosis-flow" data-diagnosis-flow hidden>
+            <p class="result-label">3つの診断を順番に進める</p>
+            <div>
+              <a href="https://www.addness.com/diagnosis/values" target="_blank" rel="noreferrer"><b>1</b><span><strong>価値観診断</strong><small>大切にしている価値観を知る</small></span></a>
+              <span aria-hidden="true">→</span>
+              <a href="https://www.addness.com/diagnosis/core-values" target="_blank" rel="noreferrer"><b>2</b><span><strong>コアバリュー診断</strong><small>人生の目的を言葉にする</small></span></a>
+              <span aria-hidden="true">→</span>
+              <a href="https://www.addness.com/diagnosis/master-plan" target="_blank" rel="noreferrer"><b>3</b><span><strong>マスタープラン診断</strong><small>未来から今日までの道筋を作る</small></span></a>
+            </div>
+          </div>
+
+          <div class="support-card">
+            <div>
+              <p class="result-label">困ったとき</p>
+              <p data-support-text></p>
+            </div>
+            <a href="https://line.me/ti/p/%40900kxiwl" target="_blank" rel="noreferrer">サポートLINEを開く</a>
+          </div>
+
+          <div class="result-actions">
+            <button class="secondary-button" type="button" data-recheck>現在地をチェックし直す</button>
+            <button class="text-button" type="button" data-back-map>地図へ戻る</button>
+          </div>
+        </div>
+      </section>
+
+      <noscript>
+        <section class="noscript-card">
+          <h2>現在地チェックを使えない場合</h2>
+          <p>目標が曖昧ならAddness診断、次に学ぶことが決まっているならSLS、途中で困ったらサポートLINEを開いてください。</p>
+          <a href="https://www.addness.com/diagnosis/dashboard">Addness診断</a>
+          <a href="https://student.success-learning.ai/login">SLS</a>
+          <a href="https://line.me/ti/p/%40900kxiwl">サポートLINE</a>
+        </section>
+      </noscript>
+    </main>
+
+    <footer>
+      <p>スキルプラス 目標達成ナビ</p>
+      <p>このページは個人情報や回答内容を保存しません。</p>
+    </footer>
+    <script src="./app.js" defer></script>
+  </body>
+</html>

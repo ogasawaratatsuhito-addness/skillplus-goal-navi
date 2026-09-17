@@ -4,6 +4,7 @@ const LINKS = {
   coreValues: "https://www.addness.com/diagnosis/core-values",
   masterPlan: "https://www.addness.com/diagnosis/master-plan",
   todo: "https://www.addness.com/todo",
+  start: "https://addness.works/start",
   support: "https://line.me/ti/p/%40900kxiwl",
 };
 
@@ -11,10 +12,10 @@ const RESULTS = {
   setup: {
     phase: "setup", phaseName: "Step 0・AIエージェントの準備", marker: "0", title: "AIエージェントとAddnessをつなごう",
     summary: "ゴール達成は、一人で抱え込まずAIエージェントと進めます。最初に、考える場所・進める相棒・ゴールの置き場所を整えましょう。",
-    action: "メイン作業場を用意し、AIエージェントを起動。Addnessで最初に進めるゴールを開く。",
-    done: "AIエージェントとAddnessのゴールを使って、次の一手を一緒に進められる。",
-    service: "メイン作業場・AIエージェント・Addness", serviceNote: "ゴールを置き、AIエージェントへ文脈を渡しながら、分解・実行・振り返りを進める土台です。",
-    cta: "Addnessでゴールを開く（ログイン）", url: LINKS.todo,
+    action: "セットアップガイドを開き、パソコンと使うAIアプリを選んで、表示される手順を最後まで進める。",
+    done: "AIアプリ、Addness登録、作業場のもとのセットアップが完了し、AIエージェントへ話しかけられる。",
+    service: "AIと働く環境の立ち上げガイド", serviceNote: "AIアプリの導入と登録、Addnessの登録、作業場のもとのダウンロードとセットアップを順番に進められます。",
+    cta: "セットアップガイドを開く", url: LINKS.start,
     support: "AIエージェントやAddnessの準備で迷ったら、サポートLINEへ相談できます。",
     showAgentFlow: true,
   },

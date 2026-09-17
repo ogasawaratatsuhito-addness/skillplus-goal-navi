@@ -159,6 +159,7 @@ h1 { margin: 0; color: var(--navy-950); font-size: clamp(2.35rem, 7vw, 4rem); li
 .journey-step small { color: var(--muted); line-height: 1.45; }
 .journey-step.is-active small { color: #47719f; }
 .journey-step.is-active .phase-service { color: #fff; background: #006efe; }
+.journey-step[data-phase="action"] .phase-service { font-size: .6rem; }
 .journey-step.is-active strong { padding-right: 76px; }
 .journey-arrow { display: grid; height: 18px; place-items: center; color: #1b86ff; font-weight: 900; transform: rotate(90deg); }
 

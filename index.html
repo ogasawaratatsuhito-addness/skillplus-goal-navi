@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=clear-buttons" />
+    <link rel="stylesheet" href="./styles.css?v=addness-workspace" />
   </head>
   <body>
     <header class="topbar">
@@ -37,6 +37,11 @@
           <em class="phase-service">セットアップガイド</em>
         </button>
 
+        <div class="workspace-rule" role="note">
+          <span aria-hidden="true">!</span>
+          <p><strong>大切なルール</strong>AIエージェントとの作業は、セットアップした「メイン作業場」だけで進めます。別の作業場やフォルダは増やしません。</p>
+        </div>
+
         <div class="journey" aria-label="AIエージェントで進める目標達成の5段階">
           <button class="journey-step" type="button" data-result="goal" data-phase="goal">
             <span class="step-number">1</span>
@@ -58,8 +63,8 @@
             <span class="step-number">3</span>
             <img class="step-icon phase-art" src="./assets/phase-action-v1.png" alt="" width="320" height="320" />
             <strong>行動する</strong>
-            <small>完了条件に沿って取り組む</small>
-            <em class="phase-service">SLS</em>
+            <small>Addnessのゴールから次の一手を進める</small>
+            <em class="phase-service">Addness・SLS</em>
           </button>
           <span class="journey-arrow" aria-hidden="true">→</span>
           <button class="journey-step" type="button" data-result="review" data-phase="result">
@@ -161,7 +166,7 @@
           <div class="agent-flow" data-agent-flow hidden>
             <p class="result-label">Step 0で整えること</p>
             <div>
-              <article><b>1</b><span><strong>メイン作業場を用意する</strong><small>ゴール・資料・進め方が集まる場所を持つ</small></span></article>
+              <article><b>1</b><span><strong>メイン作業場だけを使う</strong><small>ゴール・資料・進め方をここへ集め、別の作業場を増やさない</small></span></article>
               <span aria-hidden="true">→</span>
               <article><b>2</b><span><strong>AIエージェントを起動する</strong><small>一人で抱えず、考える・分解する・実行するを一緒に進める</small></span></article>
               <span aria-hidden="true">→</span>
@@ -210,6 +215,6 @@
       <p>スキルプラス 目標達成ナビ</p>
       <p>このページは個人情報や回答内容を保存しません。</p>
     </footer>
-    <script src="./app.js?v=clear-buttons" defer></script>
+    <script src="./app.js?v=addness-workspace" defer></script>
   </body>
 </html>

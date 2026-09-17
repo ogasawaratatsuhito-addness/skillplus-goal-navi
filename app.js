@@ -9,13 +9,14 @@ const LINKS = {
 
 const RESULTS = {
   setup: {
-    phase: "setup", phaseName: "入口・利用の準備", marker: "入口", title: "まず利用の準備を整えよう",
-    summary: "学ぶ場所と、困ったときの相談先を確認すると、安心して次へ進めます。",
-    action: "SLSの学習画面を開き、スキルプラス入門コースが見えることを確認する。",
-    done: "学習画面を開けて、困ったときにサポートLINEを使える。",
-    service: "Success Learning System（SLS）", serviceNote: "コースやアクションを進める学習サービスです。ログインが必要です。",
-    cta: "SLSを開く（ログイン）", url: LINKS.sls,
-    support: "ログインや画面の開き方で困ったら、サポートLINEへ状況を伝えてください。",
+    phase: "setup", phaseName: "Step 0・AIエージェントの準備", marker: "0", title: "AIエージェントとAddnessをつなごう",
+    summary: "ゴール達成は、一人で抱え込まずAIエージェントと進めます。最初に、考える場所・進める相棒・ゴールの置き場所を整えましょう。",
+    action: "メイン作業場を用意し、AIエージェントを起動。Addnessで最初に進めるゴールを開く。",
+    done: "AIエージェントとAddnessのゴールを使って、次の一手を一緒に進められる。",
+    service: "メイン作業場・AIエージェント・Addness", serviceNote: "ゴールを置き、AIエージェントへ文脈を渡しながら、分解・実行・振り返りを進める土台です。",
+    cta: "Addnessでゴールを開く（ログイン）", url: LINKS.todo,
+    support: "AIエージェントやAddnessの準備で迷ったら、サポートLINEへ相談できます。",
+    showAgentFlow: true,
   },
   goal: {
     phase: "goal", phaseName: "フェーズ1・目標", marker: "1", title: "3つの診断で目標の土台を作ろう",
@@ -76,10 +77,10 @@ const RESULTS = {
 
 const QUESTIONS = [
   {
-    title: "学習画面を開けて、困ったときの相談先も分かりますか？",
+    title: "AIエージェントを使える状態にして、Addnessでゴールを開けますか？",
     answers: [
-      { label: "はい、どちらも分かります", next: 1 },
-      { label: "いいえ／まだ不安です", result: "setup" },
+      { label: "はい、どちらもできています", next: 1 },
+      { label: "いいえ／まだ準備していません", result: "setup" },
     ],
   },
   {
@@ -190,6 +191,7 @@ function showResult(key) {
   cta.href = result.url;
 
   document.querySelector("[data-diagnosis-flow]").hidden = !result.showDiagnoses;
+  document.querySelector("[data-agent-flow]").hidden = !result.showAgentFlow;
 
   checkSection.hidden = true;
   resultSection.hidden = false;

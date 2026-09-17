@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=step0" />
   </head>
   <body>
     <header class="topbar">
@@ -26,18 +26,18 @@
       <section class="map-section" aria-labelledby="map-title">
         <div class="section-heading">
           <div>
-            <h1 id="map-title">目標達成までの全体マップ</h1>
+            <h1 id="map-title">AIエージェントと進める目標達成マップ</h1>
           </div>
-          <p>今の自分に近いフェーズをタップ。</p>
+          <p>最初にAIエージェントとAddnessを整えたら、今の自分に近いフェーズをタップ。</p>
         </div>
 
         <button class="setup-gate" type="button" data-result="setup">
           <span class="gate-icon" aria-hidden="true">✓</span>
-          <span><strong>利用の準備</strong><small>学習画面と相談先を確認</small></span>
-          <em class="phase-service">SLS・LINE</em>
+          <span><strong>Step 0　AIエージェントの準備</strong><small>メイン作業場・AIエージェント・Addnessをつなぐ</small></span>
+          <em class="phase-service">AI・Addness</em>
         </button>
 
-        <div class="journey" aria-label="目標達成の5段階">
+        <div class="journey" aria-label="AIエージェントで進める目標達成の5段階">
           <button class="journey-step" type="button" data-result="goal" data-phase="goal">
             <span class="step-number">1</span>
             <img class="step-icon phase-art" src="./assets/phase-goal-v1.png" alt="" width="320" height="320" />
@@ -158,6 +158,17 @@
             <a class="primary-button result-cta" data-primary-cta target="_blank" rel="noreferrer"></a>
           </div>
 
+          <div class="agent-flow" data-agent-flow hidden>
+            <p class="result-label">Step 0で整えること</p>
+            <div>
+              <article><b>1</b><span><strong>メイン作業場を用意する</strong><small>ゴール・資料・進め方が集まる場所を持つ</small></span></article>
+              <span aria-hidden="true">→</span>
+              <article><b>2</b><span><strong>AIエージェントを起動する</strong><small>一人で抱えず、考える・分解する・実行するを一緒に進める</small></span></article>
+              <span aria-hidden="true">→</span>
+              <article><b>3</b><span><strong>Addnessとつなぐ</strong><small>ゴールと完了基準を持ち、AIエージェントと日々進める</small></span></article>
+            </div>
+          </div>
+
           <div class="diagnosis-flow" data-diagnosis-flow hidden>
             <p class="result-label">3つの診断を順番に進める</p>
             <div>
@@ -187,7 +198,7 @@
       <noscript>
         <section class="noscript-card">
           <h2>現在地チェックを使えない場合</h2>
-          <p>目標が曖昧ならAddness診断、次に学ぶことが決まっているならSLS、途中で困ったらサポートLINEを開いてください。</p>
+          <p>まずAIエージェントとAddnessでゴールを開き、目標が曖昧なら3つの診断、次に学ぶことが決まっているならSLSを進めてください。</p>
           <a href="https://www.addness.com/diagnosis/dashboard">Addness診断</a>
           <a href="https://student.success-learning.ai/login">SLS</a>
           <a href="https://line.me/ti/p/%40900kxiwl">サポートLINE</a>
@@ -199,6 +210,6 @@
       <p>スキルプラス 目標達成ナビ</p>
       <p>このページは個人情報や回答内容を保存しません。</p>
     </footer>
-    <script src="./app.js" defer></script>
+    <script src="./app.js?v=step0" defer></script>
   </body>
 </html>

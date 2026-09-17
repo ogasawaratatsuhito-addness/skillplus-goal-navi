@@ -85,9 +85,11 @@ h1 { margin: 0; color: var(--navy-950); font-size: clamp(2.35rem, 7vw, 4rem); li
   font-weight: 800;
   text-decoration: none;
 }
-.primary-button { background: var(--accent-grad); color: #fff; box-shadow: 0 16px 34px -15px rgba(0, 92, 230, 0.7), inset 0 1px 0 rgba(255,255,255,.3); }
-.primary-button:hover { filter: brightness(1.06) saturate(1.08); }
-.secondary-button { background: rgba(255,255,255,.78); color: #0759c8; border: 1px solid rgba(0,110,254,.18); box-shadow: 0 12px 28px -22px rgba(0,110,254,.55); }
+.primary-button { background: var(--accent-grad); color: #fff; border: 2px solid #006efe; box-shadow: 0 12px 22px -12px rgba(0, 92, 230, 0.75), inset 0 1px 0 rgba(255,255,255,.3); }
+.primary-button:hover { filter: brightness(1.06) saturate(1.08); transform: translateY(-2px); }
+.secondary-button { background: #fff; color: #0759c8; border: 2px solid #b8d7ff; box-shadow: 0 8px 16px -12px rgba(0,110,254,.8); }
+.secondary-button:hover { border-color: #006efe; background: #f2f7ff; transform: translateY(-2px); }
+.primary-button:active, .secondary-button:active { transform: translateY(1px); }
 .copy-button { min-height: 44px; background: var(--blue-100); color: #005dcc; }
 .text-button { min-height: 44px; padding: 8px; border: 0; background: transparent; color: #006efe; cursor: pointer; font-weight: 800; text-decoration: underline; text-underline-offset: 4px; }
 
@@ -105,17 +107,19 @@ h1 { margin: 0; color: var(--navy-950); font-size: clamp(2.35rem, 7vw, 4rem); li
   padding: 14px 16px;
   text-align: left;
   background: #fff;
-  border: 1px solid #e2e8f0;
+  border: 2px solid #b8d7ff;
   border-radius: 16px;
+  box-shadow: 0 8px 18px -14px rgba(0, 92, 230, .75);
   cursor: pointer;
 }
-.setup-gate:hover, .setup-gate.is-active { border-color: #006efe; background: #f3f7ff; }
+.setup-gate:hover, .setup-gate.is-active { border-color: #006efe; background: #f3f7ff; transform: translateY(-2px); box-shadow: 0 12px 22px -14px rgba(0, 92, 230, .9); }
 .setup-gate.is-active::after { content: "あなたはここ"; margin-left: auto; padding: 3px 9px; color: #fff; background: #006efe; border-radius: 999px; font-size: .75rem; font-weight: 900; }
 .gate-icon { display: grid; width: 38px; height: 38px; flex: 0 0 auto; place-items: center; border-radius: 11px; background: #edf5ff; color: #006efe; font-weight: 900; }
 .setup-gate span:last-child { display: flex; flex-direction: column; }
 .setup-gate small, .journey-step small, .support-rail small { color: var(--muted); }
 .phase-service { display: inline-flex; width: fit-content; align-items: center; min-height: 24px; padding: 2px 9px; color: #0060d8; background: #edf5ff; border-radius: 999px; font-size: .68rem; font-style: normal; font-weight: 900; line-height: 1.25; }
 .setup-gate > .phase-service { margin-left: auto; }
+.setup-gate > .phase-service::after, .journey-step > .phase-service::after { content: " →"; }
 
 .journey {
   display: grid;
@@ -134,12 +138,14 @@ h1 { margin: 0; color: var(--navy-950); font-size: clamp(2.35rem, 7vw, 4rem); li
   padding: 16px;
   text-align: left;
   color: var(--ink);
-  background: transparent;
-  border: 1px solid transparent;
+  background: #fff;
+  border: 2px solid #dce8f8;
   border-radius: 14px;
+  box-shadow: 0 7px 16px -14px rgba(0, 77, 178, .8);
   cursor: pointer;
 }
-.journey-step:hover { background: #f6f9fe; border-color: #dae8fa; }
+.journey-step:hover { background: #f3f7ff; border-color: #78b8ff; transform: translateY(-2px); box-shadow: 0 12px 20px -14px rgba(0, 77, 178, .9); }
+.journey-step:active { transform: translateY(1px); }
 .journey-step.is-active { color: #0054c7; background: #edf5ff; border-color: #006efe; }
 .journey-step.is-active::after { content: "あなたはここ"; position: absolute; left: 50%; bottom: -12px; z-index: 2; padding: 2px 8px; transform: translateX(-50%); color: #fff; background: #006efe; border-radius: 999px; white-space: nowrap; font-size: .68rem; font-weight: 900; }
 .step-number { position: absolute; top: 9px; right: 12px; color: rgba(0,110,254,.46); font-size: 0.75rem; font-weight: 900; }
@@ -169,8 +175,9 @@ h1 { margin: 0; color: var(--navy-950); font-size: clamp(2.35rem, 7vw, 4rem); li
 .progress-track span { display: block; width: 25%; height: 100%; background: var(--accent-grad); border-radius: inherit; transition: width 220ms ease; }
 .question-title { margin: 0 0 22px; color: var(--navy-900); font-size: clamp(1.35rem, 5vw, 2rem); line-height: 1.45; }
 .answer-list { display: grid; gap: 11px; }
-.answer-button { min-height: 58px; padding: 14px 16px; text-align: left; background: #fff; border: 1px solid #dde5ee; border-radius: 12px; cursor: pointer; font-weight: 750; }
-.answer-button:hover { background: #fff; border-color: rgba(0,110,254,.36); color: #005dcc; }
+.answer-button { display: flex; min-height: 58px; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 16px; text-align: left; background: #fff; border: 2px solid #cfe0f5; border-radius: 12px; box-shadow: 0 7px 14px -13px rgba(0,77,178,.9); cursor: pointer; font-weight: 750; }
+.answer-button::after { content: "選ぶ →"; flex: 0 0 auto; color: #006efe; font-size: .78rem; font-weight: 900; }
+.answer-button:hover { background: #f3f7ff; border-color: #006efe; color: #005dcc; transform: translateY(-2px); }
 
 .result-kicker { margin-bottom: 14px; }
 .current-position { margin: 0 0 26px; padding: 16px; background: #f7f9fc; border: 1px solid #e3e9f0; border-radius: 14px; }
@@ -204,11 +211,15 @@ h1 { margin: 0; color: var(--navy-950); font-size: clamp(2.35rem, 7vw, 4rem); li
 
 .diagnosis-flow, .agent-flow { margin-top: 18px; padding: 18px; background: #f7f9fc; border-radius: 14px; }
 .diagnosis-flow > div, .agent-flow > div { display: grid; gap: 8px; }
-.diagnosis-flow a, .agent-flow article { display: flex; min-height: 58px; align-items: center; gap: 12px; padding: 10px 12px; color: var(--ink); background: #fff; border: 1px solid #dce5ef; border-radius: 12px; text-decoration: none; }
-.diagnosis-flow a:hover { border-color: #006efe; }
+.diagnosis-flow a, .agent-flow article { display: flex; min-height: 64px; align-items: center; gap: 12px; padding: 11px 12px; color: var(--ink); border-radius: 12px; text-decoration: none; }
+.diagnosis-flow a { background: #fff; border: 2px solid #b8d7ff; box-shadow: 0 9px 17px -13px rgba(0,77,178,.95); cursor: pointer; }
+.diagnosis-flow a:hover { border-color: #006efe; background: #f3f7ff; transform: translateY(-2px); }
+.diagnosis-flow a:active { transform: translateY(1px); }
+.agent-flow article { background: #edf2f7; border: 1px solid #e0e7ef; box-shadow: none; }
 .diagnosis-flow a b, .agent-flow article b { display: grid; width: 30px; height: 30px; flex: 0 0 auto; place-items: center; color: #fff; background: #006efe; border-radius: 50%; }
 .diagnosis-flow a span, .agent-flow article span { display: flex; flex-direction: column; }
 .diagnosis-flow a small, .agent-flow article small { color: var(--muted); }
+.diagnosis-flow a em { margin-left: auto; padding: 5px 9px; color: #fff; background: #006efe; border-radius: 999px; white-space: nowrap; font-size: .7rem; font-style: normal; font-weight: 900; }
 .diagnosis-flow > div > span, .agent-flow > div > span { display: none; color: #006efe; text-align: center; font-weight: 900; }
 .support-card { display: grid; gap: 12px; margin-top: 18px; padding: 18px; background: #fff; border: 1px solid #e2e8f0; border-radius: 14px; }
 .support-card p { margin: 0; }
@@ -293,8 +304,10 @@ footer p { margin: 0; }
   .check-entry p { display: none; }
   .check-entry .primary-button { font-size: .875rem; min-height: 46px; padding: 10px; }
   .cycle-note { margin: 6px 0 10px; }
+  .diagnosis-flow a { display: grid; grid-template-columns: auto 1fr; }
+  .diagnosis-flow a em { grid-column: 1 / -1; width: 100%; margin: 2px 0 0; padding: 7px 10px; text-align: center; border-radius: 9px; }
 }
 
 @media (prefers-reduced-motion: no-preference) {
-  .journey-step, .primary-button, .answer-button { transition: transform 160ms ease, background 160ms ease, border-color 160ms ease; }
+  .journey-step, .setup-gate, .primary-button, .secondary-button, .answer-button, .diagnosis-flow a { transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease; }
 }

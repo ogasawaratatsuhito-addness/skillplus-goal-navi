@@ -350,3 +350,36 @@ footer p { margin: 0; }
 @media (prefers-reduced-motion: no-preference) {
   .journey-step, .setup-gate, .primary-button, .secondary-button, .answer-button, .diagnosis-flow a, .event-guide-link { transition: transform 160ms ease, background 160ms ease, border-color 160ms ease, box-shadow 160ms ease; }
 }
+
+/* 今週の予定 */
+.week-schedule { display: grid; gap: 16px; margin-top: 34px; }
+.week-days { display: grid; gap: 10px; }
+.week-day { padding: 14px 16px; background: #fff; border: 2px solid #dce8f8; border-radius: 16px; box-shadow: 0 8px 18px -16px rgba(0,77,178,.75); }
+.week-day.is-today { border-color: #78b8ff; background: #f6fbff; }
+.week-date { display: flex; align-items: center; gap: 8px; margin: 0 0 8px; color: var(--ink); font-weight: 900; }
+.week-badge { padding: 2px 8px; color: #fff; background: var(--accent-grad); border-radius: 999px; font-size: .72rem; }
+.week-day ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.week-day li { display: grid; grid-template-columns: 96px 1fr auto; gap: 10px; align-items: baseline; padding: 6px 0; border-top: 1px solid #eef3fa; }
+.week-day li:first-child { border-top: 0; }
+.week-time { color: #006efe; font-weight: 900; font-size: .92rem; }
+.week-name { color: #3d4d5f; line-height: 1.45; }
+.week-room { color: var(--muted); font-size: .8rem; white-space: nowrap; }
+.week-fallback { margin: 0; padding: 14px 16px; color: var(--muted); background: #fff; border: 2px dashed #dce8f8; border-radius: 16px; }
+.week-catalog { overflow: hidden; background: #fff; border: 2px solid #dce8f8; border-radius: 16px; }
+.week-catalog summary { position: relative; display: grid; grid-template-columns: 1fr auto; gap: 4px 14px; align-items: center; padding: 15px 18px; cursor: pointer; list-style: none; }
+.week-catalog summary small { grid-column: 1; }
+.week-catalog summary::-webkit-details-marker { display: none; }
+.week-catalog summary small { color: var(--muted); }
+.week-catalog-body { padding: 0 18px 16px; border-top: 1px solid #e7eef7; }
+.week-catalog-body ul { display: grid; gap: 10px; margin: 14px 0 0; padding: 0; list-style: none; }
+.week-catalog-body li { display: grid; gap: 2px; }
+.week-catalog-body strong { color: var(--ink); }
+.week-catalog-body small { color: #53657a; }
+.week-catalog-body em { color: #006efe; font-style: normal; font-size: .78rem; font-weight: 900; }
+.week-footer { display: grid; gap: 10px; }
+.week-footer p { margin: 0; color: var(--muted); font-size: .85rem; line-height: 1.55; }
+.week-footer a { display: flex; min-height: 46px; align-items: center; justify-content: center; padding: 9px 14px; color: #fff; background: var(--accent-grad); border: 2px solid #006efe; border-radius: 12px; box-shadow: 0 10px 18px -13px rgba(0,92,230,.9); text-decoration: none; font-weight: 900; }
+@media (max-width: 420px) {
+  .week-day li { grid-template-columns: 1fr auto; }
+  .week-time { grid-column: 1 / -1; }
+}

@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@500;700;900&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=walk-guide" />
+    <link rel="stylesheet" href="./styles.css?v=20260921a" />
   </head>
   <body>
     <header class="topbar">
@@ -100,7 +100,32 @@
           </div>
           <button type="button" class="secondary-button" data-result="stuck">止まりを解消する</button>
         </div>
+        <a class="event-guide-link" href="#week-schedule">今週ひらかれる会を見る →</a>
         <a class="event-guide-link" href="#support-events">イベント・支援の使い分けを見る →</a>
+      </section>
+
+      <section class="week-schedule" id="week-schedule" aria-labelledby="week-schedule-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-number">THIS WEEK</p>
+            <h2 id="week-schedule-title">今週ひらかれる会</h2>
+          </div>
+          <p data-week-note>運営が確定した今週の予定です。全部へ出る必要はありません。今の自分に合う回を1つ選んでください。</p>
+        </div>
+
+        <div class="week-days" data-week-days>
+          <p class="week-fallback">今週の予定はサポートLINEの「イベント情報」で確認できます。</p>
+        </div>
+
+        <details class="week-catalog" data-week-catalog hidden>
+          <summary><strong>どの会に出ればいい？</strong><small>会ごとの「こんなときに」を見る</small><span class="summary-open"></span></summary>
+          <div class="week-catalog-body"><ul data-week-catalog-list></ul></div>
+        </details>
+
+        <div class="week-footer">
+          <p data-week-asof></p>
+          <a href="https://line.me/ti/p/%40900kxiwl" target="_blank" rel="noreferrer">サポートLINEで予約する →</a>
+        </div>
       </section>
 
       <section class="support-events" id="support-events" aria-labelledby="support-events-title">
@@ -263,6 +288,6 @@
       <p>スキルプラスの歩み方</p>
       <p>このページは個人情報や回答内容を保存しません。</p>
     </footer>
-    <script src="./app.js?v=walk-guide" defer></script>
+    <script src="./app.js?v=20260921a" defer></script>
   </body>
 </html>

@@ -203,3 +203,57 @@ document.querySelectorAll("[data-start-check], [data-recheck]").forEach((button)
 document.querySelectorAll("[data-result]").forEach((button) => button.addEventListener("click", () => showResult(button.dataset.result)));
 document.querySelector("[data-reset-check]").addEventListener("click", startCheck);
 document.querySelector("[data-back-map]").addEventListener("click", () => scrollToElement(document.querySelector(".map-section")));
+
+// 今週の予定（events.json）。読み込めない時は既定のフォールバック文を残す
+async function renderWeekSchedule() {
+  const container = document.querySelector("[data-week-days]");
+  if (!container) return;
+
+  let data;
+  try {
+    const res = await fetch("./events.json", { cache: "no-store" });
+    if (!res.ok) return;
+    data = await res.json();
+  } catch (error) {
+    return;
+  }
+
+  const today = new Date();
+  const todayKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, "0")}-${String(today.getDate()).padStart(2, "0")}`;
+  const days = (data.days || []).filter((day) => day.date >= todayKey);
+
+  if (!days.length) {
+    container.innerHTML = '<p class="week-fallback">今週の予定は終了しました。次の予定はサポートLINEの「イベント情報」で確認できます。</p>';
+  } else {
+    container.innerHTML = days
+      .map((day) => {
+        const isToday = day.date === todayKey;
+        const rows = (day.items || [])
+          .map((item) => `<li><span class="week-time">${item.time}</span><span class="week-name">${item.name}</span>${item.room ? `<span class="week-room">${item.room}</span>` : ""}</li>`)
+          .join("");
+        return `<div class="week-day${isToday ? " is-today" : ""}"><p class="week-date">${day.label}${isToday ? '<span class="week-badge">今日</span>' : ""}</p><ul>${rows}</ul></div>`;
+      })
+      .join("");
+  }
+
+  if (data.note) {
+    const note = document.querySelector("[data-week-note]");
+    if (note) note.textContent = data.note;
+  }
+
+  const asOf = document.querySelector("[data-week-asof]");
+  if (asOf && data.asOf) {
+    asOf.textContent = `${data.weekLabel || ""}の予定（${data.asOf} 時点）。場所のA〜Dはアクションラウンジの部屋です。`;
+  }
+
+  const catalog = document.querySelector("[data-week-catalog]");
+  const list = document.querySelector("[data-week-catalog-list]");
+  if (catalog && list && Array.isArray(data.catalog) && data.catalog.length) {
+    list.innerHTML = data.catalog
+      .map((item) => `<li><strong>${item.name}</strong><small>${item.when}</small><em>${item.phase}</em></li>`)
+      .join("");
+    catalog.hidden = false;
+  }
+}
+
+renderWeekSchedule();

@@ -26,7 +26,7 @@ const RESULTS = {
     done: "3つの診断が完了し、目指す未来とその理由を自分の言葉で確認できる。",
     service: "Addnessの3つの診断", serviceNote: "価値観からマスタープランまで、順番に目標の土台を作ります。価値観診断は登録不要で始められ、コアバリュー診断とマスタープラン診断はAddnessへのログインが必要です。",
     cta: "価値観診断から始める", url: LINKS.values,
-    support: "診断は途中で中断しても、続きから再開できます。",
+    support: "診断が途中で止まっても、続きから再開できます。分からないところはサポートLINEへ相談できます。",
     showDiagnoses: true,
   },
   route: {
@@ -40,10 +40,10 @@ const RESULTS = {
   },
   action: {
     phase: "action", phaseName: "フェーズ3・行動", marker: "3", title: "Addnessのゴールを、AIエージェントと進めよう",
-    summary: "Addnessをゴールと進捗の正本にして、セットアップしたメイン作業場で次の一手を進めます。必要な学習にはサクセスラーニングも使えます。",
+    summary: "ゴールと進捗はすべてAddnessにまとめて、セットアップしたメイン作業場で次の一手を進めます。必要な学習にはサクセスラーニングも使えます。",
     action: "Addnessで進行中のゴールを開き、メイン作業場のAIエージェントと次の一手を進める。必要ならサクセスラーニングのアクションマップで学ぶ。",
     done: "行動の成果と次の一手がAddnessのゴールへ戻り、同じメイン作業場から続けられる。",
-    service: "Addness・メイン作業場（必要に応じてサクセスラーニング）", serviceNote: "Addnessを正本に、AIエージェントと実行します。知識や手順が必要なときはサクセスラーニングのアクションマップを使います。Addnessはログインが必要です。",
+    service: "Addness・メイン作業場（必要に応じてサクセスラーニング）", serviceNote: "Addnessを中心に、AIエージェントと実行します。知識や手順が必要なときはサクセスラーニングのアクションマップを使います。Addnessはログインが必要です。",
     cta: "Addnessでゴールを進める（ログイン）", url: LINKS.todo,
     support: "ゴール達成の作業はメイン作業場だけで進めます。学習内容はスキルプラスくんや講師質問も使えます。",
   },
@@ -54,10 +54,10 @@ const RESULTS = {
     done: "次に試すことが一つ決まり、Addnessのゴールからもう一度行動できる。",
     service: "Addness・AIエージェント（必要に応じてサクセスラーニング）", serviceNote: "ゴールの文脈を保ったままAIと整理し、学習内容はスキルプラスくんや講師質問も使います。Addnessはログインが必要です。",
     cta: "Addnessでゴールを開く（ログイン）", url: LINKS.todo,
-    support: "ログインや利用方法の問題はサポートLINEへ相談できます。",
+    support: "一人で解けないときは、詰まりごと解消先案内会やグルサポで相談できます。今週ひらかれる会から選べます。ログインや使い方の問題はサポートLINEへ。",
   },
   review: {
-    phase: "result", phaseName: "フェーズ4・結果確認", marker: "4", title: "結果を確認・振り返ろう",
+    phase: "result", phaseName: "フェーズ4・結果確認", marker: "4", title: "結果を確認しよう",
     summary: "学習量ではなく、目標に対して何が変わったかを見る段階です。",
     action: "Addnessのゴールで、目標・取り組んだ行動・今の結果を並べ、続けることと変えることを決める。",
     done: "次に続けること、変えること、取り組む一歩が決まっている。",
@@ -243,7 +243,7 @@ async function renderWeekSchedule() {
 
   const asOf = document.querySelector("[data-week-asof]");
   if (asOf && data.asOf) {
-    asOf.textContent = `${data.weekLabel || ""}の予定（${data.asOf} 時点）。場所のA〜Dはアクションラウンジの部屋です。`;
+    asOf.textContent = `${data.weekLabel || ""}の予定（${data.asOf} 時点）。場所のA〜DはアクションLoungeの部屋です。`;
   }
 
   const upcoming = document.querySelector("[data-week-upcoming]");

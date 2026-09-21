@@ -383,3 +383,16 @@ footer p { margin: 0; }
   .week-day li { grid-template-columns: 1fr auto; }
   .week-time { grid-column: 1 / -1; }
 }
+
+/* このあとのグルサポ */
+.week-upcoming { padding: 14px 16px; background: #f6f9fe; border: 2px solid #e2ecfa; border-radius: 16px; }
+.week-upcoming-title { margin: 0 0 8px; color: var(--ink); font-weight: 900; }
+.week-upcoming ul { display: grid; gap: 6px; margin: 0; padding: 0; list-style: none; }
+.week-upcoming li { display: grid; grid-template-columns: 74px 96px 1fr; gap: 10px; align-items: baseline; padding: 6px 0; border-top: 1px solid #e7eef7; }
+.week-upcoming li:first-child { border-top: 0; }
+.week-up-date { color: var(--ink); font-weight: 900; font-size: .9rem; }
+@media (max-width: 420px) {
+  .week-upcoming li { grid-template-columns: 74px 1fr; }
+  .week-upcoming .week-time { grid-column: 2; }
+  .week-upcoming .week-name { grid-column: 1 / -1; }
+}

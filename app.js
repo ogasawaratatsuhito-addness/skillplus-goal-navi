@@ -246,6 +246,21 @@ async function renderWeekSchedule() {
     asOf.textContent = `${data.weekLabel || ""}の予定（${data.asOf} 時点）。場所のA〜Dはアクションラウンジの部屋です。`;
   }
 
+  const upcoming = document.querySelector("[data-week-upcoming]");
+  const upcomingList = document.querySelector("[data-week-upcoming-list]");
+  if (upcoming && upcomingList && Array.isArray(data.upcoming) && data.upcoming.length) {
+    const week = ["日", "月", "火", "水", "木", "金", "土"];
+    upcomingList.innerHTML = data.upcoming
+      .filter((item) => item.date >= todayKey)
+      .map((item) => {
+        const [y, m, d] = item.date.split("-").map(Number);
+        const label = `${m}/${d}(${week[new Date(y, m - 1, d).getDay()]})`;
+        return `<li><span class="week-up-date">${label}</span><span class="week-time">${item.time}</span><span class="week-name">${item.name}</span></li>`;
+      })
+      .join("");
+    upcoming.hidden = !upcomingList.children.length;
+  }
+
   const catalog = document.querySelector("[data-week-catalog]");
   const list = document.querySelector("[data-week-catalog-list]");
   if (catalog && list && Array.isArray(data.catalog) && data.catalog.length) {
